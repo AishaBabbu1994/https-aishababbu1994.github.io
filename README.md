@@ -1,34 +1,33 @@
-# Blancanieves · El bosque encantado
+# 🌸 Sakura Card Captor · Chatbot mágico
 
-Chatbot interactivo de Blancanieves usando la API de Groq. Totalmente estático y listo para GitHub Pages.
+Chatbot de Sakura Kinomoto usando la API de Groq. Totalmente estático para GitHub Pages.
 
-## Despliegue en GitHub Pages
+## 🚀 Despliegue en GitHub Pages
 
-1. Sube todos estos archivos a un repositorio en GitHub:
+1. Sube estos 5 archivos a un repositorio:
    - `index.html`
    - `style.css`
    - `script.js`
    - `config.json`
-   - `README.md` (opcional)
+   - `README.md`
 
-2. En el repositorio, ve a **Settings > Pages**.
-3. En "Branch", selecciona `main` (o `master`) y la carpeta `/root`.
-4. Haz clic en **Save**.
-5. En unos minutos tu sitio estará disponible en `https://tuusuario.github.io/nombre-repositorio`.
+2. Ve a **Settings > Pages** del repositorio.
+3. En "Branch", elige `main` (o `master`) y carpeta `/root`.
+4. Guarda. En 1-2 minutos estará vivo en `https://tuusuario.github.io/nombre-repo`
 
-## Uso
+## 🔮 Uso
 
-- Al cargar la página, se pedirá tu **clave de API de Groq** (empieza por `gsk_`). Puedes obtener una gratis en [console.groq.com](https://console.groq.com).
-- La configuración se carga desde `config.json`. Puedes editar el `system_prompt`, el modelo, temperatura y `max_tokens` sin tocar el código.
-- El modelo por defecto es `llama-3.1-8b-instant` (rápido y gratuito).
+- Al abrir la página, te pedirá tu **clave de Groq** (empieza por `gsk_`). Consíguela gratis en [console.groq.com](https://console.groq.com).
+- La personalidad de Sakura, el modelo y la temperatura se cargan desde `config.json`. Puedes editarlo sin tocar el código.
 
-## Personalización
+## ✨ Personalización
 
-Cambia el personaje o el estilo editando:
-- `config.json`: modifica el `system_prompt` y los parámetros de la IA.
-- `style.css`: colores, fondos, burbujas.
-- `script.js`: avatares, mensajes iniciales, etc.
+- Cambia el `system_prompt` en `config.json` para darle otro rol (por ejemplo, Tomoyo o Kero-chan).
+- Modifica colores, fondos y avatares en `style.css`.
+- La clave solo se guarda en memoria durante la sesión, ningún servidor la almacena.
 
-## Nota
+## 📷 Captura
 
-La clave de API se guarda solo en la memoria del navegador mientras dura la sesión. No se almacena en ningún servidor.
+![Sakura Chat](https://via.placeholder.com/400?text=Sakura+Chat)
+
+¡Disfruta de la magia de las cartas Clow! 🃏🌸✨
