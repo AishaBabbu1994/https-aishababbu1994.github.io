@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Quicksand', sans-serif;
-    background: #f9eef5;
+    background: #ffd9e6;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -21,7 +21,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(145deg, #ffdfe6 0%, #ffc0d0 100%);
+    background: linear-gradient(145deg, #ffc0d4 0%, #ffa5c0 100%);
     z-index: -2;
 }
 
@@ -33,7 +33,7 @@ body {
     left: 0;
     right: 0;
     text-align: center;
-    opacity: 0.15;
+    opacity: 0.2;
     white-space: pre;
     pointer-events: none;
 }
@@ -41,31 +41,32 @@ body {
 .chat-container {
     width: 100%;
     max-width: 700px;
-    background: rgba(255, 250, 245, 0.96);
+    background: #fff5f8;
     border-radius: 48px 48px 32px 32px;
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    box-shadow: 0 20px 35px rgba(255, 105, 180, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.8);
     overflow: hidden;
     backdrop-filter: blur(2px);
 }
 
 .chat-header {
-    background: #e87c9e;
+    background: #ff82b2;
     padding: 20px;
     text-align: center;
-    color: #fff4f0;
-    border-bottom: 5px solid #ffb7c5;
+    color: #fff0f5;
+    border-bottom: 5px solid #ffb7d2;
     position: relative;
 }
 
 .wand-icon {
     width: 50px;
-    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.15));
 }
 
 .chat-header h1 {
     font-size: 2rem;
     letter-spacing: 2px;
     margin: 5px 0;
+    text-shadow: 2px 2px 0 #ff5c8a;
 }
 
 .chat-header p {
@@ -76,11 +77,13 @@ body {
 
 .api-status {
     font-size: 0.8rem;
-    background: rgba(0,0,0,0.25);
+    background: rgba(255, 220, 240, 0.4);
     display: inline-block;
     padding: 4px 12px;
     border-radius: 50px;
     margin-top: 8px;
+    color: #ffd9e6;
+    font-weight: bold;
 }
 
 .chat-messages {
@@ -90,7 +93,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    background: #fffaf7;
+    background: #ffeef4;
 }
 
 .message {
@@ -119,12 +122,12 @@ body {
     font-size: 2rem;
     width: 44px;
     height: 44px;
-    background: #ffe0e7;
+    background: #ffd9e6;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(255, 105, 180, 0.2);
 }
 
 .bubble {
@@ -132,28 +135,30 @@ body {
     padding: 12px 18px;
     border-radius: 24px;
     background: white;
-    color: #5e3a44;
+    color: #a84c6f;
     font-size: 1rem;
     line-height: 1.4;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
 .bot-message .bubble {
-    background: #ffeef2;
+    background: #ffe0ec;
     border-bottom-left-radius: 6px;
+    color: #b84c6f;
 }
 
 .user-message .bubble {
-    background: #f2e3ff;
+    background: #f3d9ff;
     border-bottom-right-radius: 6px;
+    color: #7c3f58;
 }
 
 .chat-input-area {
     display: flex;
     padding: 16px 20px;
-    background: #ffede8;
+    background: #ffe0ec;
     gap: 12px;
-    border-top: 1px solid #ffd5df;
+    border-top: 1px solid #ffc0d4;
 }
 
 #userInput {
@@ -163,18 +168,19 @@ body {
     border-radius: 60px;
     font-family: inherit;
     font-size: 1rem;
-    background: white;
+    background: #fffafc;
     outline: none;
     transition: 0.2s;
-    box-shadow: inset 0 1px 3px #0001, 0 1px 0 white;
+    box-shadow: inset 0 1px 3px #ffb7c5, 0 1px 0 white;
+    color: #b14b6f;
 }
 
 #userInput:focus {
-    box-shadow: 0 0 0 2px #e87c9e;
+    box-shadow: 0 0 0 2px #ff82b2;
 }
 
 #sendBtn {
-    background: #e87c9e;
+    background: #ff82b2;
     border: none;
     color: white;
     font-weight: bold;
@@ -184,11 +190,11 @@ body {
     font-size: 1rem;
     cursor: pointer;
     transition: 0.2s;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(255, 105, 180, 0.3);
 }
 
 #sendBtn:hover:not(:disabled) {
-    background: #c75a7a;
+    background: #e86898;
     transform: scale(0.97);
 }
 
@@ -202,11 +208,22 @@ body {
 }
 
 .chat-messages::-webkit-scrollbar-track {
-    background: #ffd5df;
+    background: #ffc0d4;
     border-radius: 10px;
 }
 
 .chat-messages::-webkit-scrollbar-thumb {
-    background: #e87c9e;
+    background: #ff82b2;
     border-radius: 10px;
+}
+
+/* Detalle adicional: pequeñas flores en el fondo del chat */
+.chat-messages::after {
+    content: "🌸";
+    font-size: 30px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0.1;
+    pointer-events: none;
 }
