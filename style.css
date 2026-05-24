@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Quicksand', sans-serif;
-    background: #2b5e2b;
+    background: #f9eef5;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -15,25 +15,25 @@ body {
     position: relative;
 }
 
-.forest-bg {
+.sakura-bg {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(145deg, #1e3a1e 0%, #2e6b2e 100%);
+    background: linear-gradient(145deg, #ffdfe6 0%, #ffc0d0 100%);
     z-index: -2;
 }
 
-.forest-bg::before {
-    content: "🌲🌳🌲";
-    font-size: 120px;
+.sakura-bg::before {
+    content: "🌸🌸🌸";
+    font-size: 100px;
     position: absolute;
     bottom: 10px;
     left: 0;
     right: 0;
     text-align: center;
-    opacity: 0.1;
+    opacity: 0.15;
     white-space: pre;
     pointer-events: none;
 }
@@ -41,26 +41,25 @@ body {
 .chat-container {
     width: 100%;
     max-width: 700px;
-    background: rgba(255, 248, 225, 0.95);
+    background: rgba(255, 250, 245, 0.96);
     border-radius: 48px 48px 32px 32px;
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.7);
     overflow: hidden;
     backdrop-filter: blur(2px);
-    transition: all 0.2s ease;
 }
 
 .chat-header {
-    background: #8b5a2b;
+    background: #e87c9e;
     padding: 20px;
     text-align: center;
-    color: #fef0cf;
-    border-bottom: 5px solid #e4b363;
+    color: #fff4f0;
+    border-bottom: 5px solid #ffb7c5;
     position: relative;
 }
 
-.apple-icon {
+.wand-icon {
     width: 50px;
-    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
 }
 
 .chat-header h1 {
@@ -72,12 +71,12 @@ body {
 .chat-header p {
     font-style: italic;
     font-size: 0.9rem;
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
 .api-status {
     font-size: 0.8rem;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.25);
     display: inline-block;
     padding: 4px 12px;
     border-radius: 50px;
@@ -91,7 +90,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    background: #fff8ef;
+    background: #fffaf7;
 }
 
 .message {
@@ -120,7 +119,7 @@ body {
     font-size: 2rem;
     width: 44px;
     height: 44px;
-    background: #e5d5b0;
+    background: #ffe0e7;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -133,28 +132,28 @@ body {
     padding: 12px 18px;
     border-radius: 24px;
     background: white;
-    color: #2c2b26;
+    color: #5e3a44;
     font-size: 1rem;
     line-height: 1.4;
     box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
 .bot-message .bubble {
-    background: #f1e7cf;
+    background: #ffeef2;
     border-bottom-left-radius: 6px;
 }
 
 .user-message .bubble {
-    background: #d9e0b5;
+    background: #f2e3ff;
     border-bottom-right-radius: 6px;
 }
 
 .chat-input-area {
     display: flex;
     padding: 16px 20px;
-    background: #f7e9cf;
+    background: #ffede8;
     gap: 12px;
-    border-top: 1px solid #e6cf9e;
+    border-top: 1px solid #ffd5df;
 }
 
 #userInput {
@@ -171,11 +170,11 @@ body {
 }
 
 #userInput:focus {
-    box-shadow: 0 0 0 2px #e4b363;
+    box-shadow: 0 0 0 2px #e87c9e;
 }
 
 #sendBtn {
-    background: #8b5a2b;
+    background: #e87c9e;
     border: none;
     color: white;
     font-weight: bold;
@@ -189,7 +188,7 @@ body {
 }
 
 #sendBtn:hover:not(:disabled) {
-    background: #6e451c;
+    background: #c75a7a;
     transform: scale(0.97);
 }
 
@@ -203,11 +202,11 @@ body {
 }
 
 .chat-messages::-webkit-scrollbar-track {
-    background: #e6cf9e;
+    background: #ffd5df;
     border-radius: 10px;
 }
 
 .chat-messages::-webkit-scrollbar-thumb {
-    background: #8b5a2b;
+    background: #e87c9e;
     border-radius: 10px;
 }
