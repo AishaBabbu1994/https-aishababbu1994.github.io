@@ -1,57 +1,53 @@
 // Variables globales
 let groqApiKey = null;
-let appConfig = null;        // Guardará la configuración cargada
+let appConfig = null;
 const chatMessages = document.getElementById('chatMessages');
 const userInput = document.getElementById('userInput');
 const sendBtn = document.getElementById('sendBtn');
 const apiStatus = document.getElementById('apiStatus');
 
-// URLs
 const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
 
-// Cargar configuración primero
 window.addEventListener('DOMContentLoaded', async () => {
     await loadConfig();
     askForApiKey();
 });
 
-// Carga config.json
 async function loadConfig() {
     try {
         const response = await fetch('config.json');
         if (!response.ok) throw new Error('No se pudo cargar config.json');
         appConfig = await response.json();
-        apiStatus.textContent = "✅ Configuración cargada · Esperando clave";
-        apiStatus.style.backgroundColor = "#2e7d32";
+        apiStatus.textContent = "✨ Configuración mágica cargada · Esperando clave";
+        apiStatus.style.backgroundColor = "#ab6d82";
         console.log("Configuración cargada:", appConfig);
     } catch (error) {
         console.error("Error cargando config:", error);
         apiStatus.textContent = "⚠️ Usando configuración por defecto";
         apiStatus.style.backgroundColor = "#b85c00";
-        // Configuración por defecto segura
         appConfig = {
-            system_prompt: "Eres Blancanieves. Hablas con dulzura y brevedad. Usa emojis de bosque (🍎, 🌲, 🐦, 🐿️).",
+            system_prompt: "Eres Sakura Kinomoto. Hablas con alegría y usas emojis de magia (🌸✨🃏).",
             model: "llama-3.1-8b-instant",
-            temperature: 0.7,
+            temperature: 0.8,
             max_tokens: 150
         };
     }
 }
 
 function askForApiKey() {
-    const key = prompt("🍎 Para hablar conmigo, necesito tu clave de API de Groq.\n\nPuedes obtenerla en https://console.groq.com\n\nIntroduce tu clave (empieza por gsk_):");
+    const key = prompt("🌸 Sakura necesita tu clave de Groq.\n\nObtén una gratis en https://console.groq.com\n\nIntroduce tu clave (empieza por gsk_):");
     if (key && key.trim().startsWith("gsk_")) {
         groqApiKey = key.trim();
-        apiStatus.textContent = "✅ Clave activa · Bosque conectado";
-        apiStatus.style.backgroundColor = "#2e7d32";
+        apiStatus.textContent = "✅ Magia activa · ¡Cartas listas!";
+        apiStatus.style.backgroundColor = "#ab6d82";
         userInput.disabled = false;
         sendBtn.disabled = false;
         userInput.focus();
-        addBotMessage("🍎 ¡Perfecto! Ya podemos charlar. Cuéntame, ¿cómo está tu día?");
+        addBotMessage("🌸✨ ¡Genial! Ahora sí, ¿en qué puedo ayudarte? Kero-chan dice que tengas cuidado con las cartas 🃏");
     } else {
-        apiStatus.textContent = "❌ Clave no válida · Recarga la página para intentarlo de nuevo";
+        apiStatus.textContent = "❌ Clave no válida · Recarga la página";
         apiStatus.style.backgroundColor = "#8b0000";
-        addBotMessage("🍎 Lo siento, la clave no es correcta. Por favor, recarga la página y prueba con una clave válida de Groq.");
+        addBotMessage("🌸 Lo siento, la clave no funciona. Recarga e intenta con una clave válida de Groq, por favor.");
         userInput.disabled = true;
         sendBtn.disabled = true;
     }
@@ -72,7 +68,7 @@ function addMessage(text, isUser) {
 
     const avatar = document.createElement('div');
     avatar.classList.add('avatar');
-    avatar.textContent = isUser ? '👤' : '🍎';
+    avatar.textContent = isUser ? '👤' : '🌸';
 
     const bubble = document.createElement('div');
     bubble.classList.add('bubble');
@@ -88,7 +84,7 @@ function showTypingIndicator() {
     const typingDiv = document.createElement('div');
     typingDiv.id = 'typingIndicator';
     typingDiv.classList.add('message', 'bot-message');
-    typingDiv.innerHTML = `<div class="avatar">🍎</div><div class="bubble">✍️ Escribiendo...</div>`;
+    typingDiv.innerHTML = `<div class="avatar">🌸</div><div class="bubble">✨✨ Escribiendo magia... ✨✨</div>`;
     chatMessages.appendChild(typingDiv);
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
@@ -100,7 +96,7 @@ function removeTypingIndicator() {
 
 async function callGroqAPI(userMessage) {
     if (!appConfig) {
-        return "🍎 El bosque aún no ha terminado de despertar. Espera un momento...";
+        return "🌸 Kero-chan se comió la configuración... Espera un momento 🐤";
     }
 
     const payload = {
@@ -132,7 +128,7 @@ async function callGroqAPI(userMessage) {
         return data.choices[0].message.content;
     } catch (error) {
         console.error('Groq API error:', error);
-        return `🍎 Oh, los animalitos del bosque no pudieron entregar tu mensaje. Error: ${error.message}. ¿Puedes repetirlo?`;
+        return `🌸 ¡Oh no! La magia falló: ${error.message}. ¿Intentamos de nuevo? 🔮`;
     }
 }
 
