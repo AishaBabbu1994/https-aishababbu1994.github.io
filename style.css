@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: #2b5e2b;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.forest-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, #1e3a1e 0%, #2e6b2e 100%);
+    z-index: -2;
+}
+
+.forest-bg::before {
+    content: "🌲🌳🌲";
+    font-size: 120px;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    opacity: 0.1;
+    white-space: pre;
+    pointer-events: none;
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 700px;
+    background: rgba(255, 248, 225, 0.95);
+    border-radius: 48px 48px 32px 32px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    backdrop-filter: blur(2px);
+    transition: all 0.2s ease;
+}
+
+.chat-header {
+    background: #8b5a2b;
+    padding: 20px;
+    text-align: center;
+    color: #fef0cf;
+    border-bottom: 5px solid #e4b363;
+    position: relative;
+}
+
+.apple-icon {
+    width: 50px;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+}
+
+.chat-header h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin: 5px 0;
+}
+
+.chat-header p {
+    font-style: italic;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.api-status {
+    font-size: 0.8rem;
+    background: rgba(0,0,0,0.3);
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 50px;
+    margin-top: 8px;
+}
+
+.chat-messages {
+    height: 450px;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: #fff8ef;
+}
+
+.message {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    animation: fadeSlide 0.3s ease-out;
+}
+
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.user-message {
+    flex-direction: row-reverse;
+}
+
+.avatar {
+    font-size: 2rem;
+    width: 44px;
+    height: 44px;
+    background: #e5d5b0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.bubble {
+    max-width: 70%;
+    padding: 12px 18px;
+    border-radius: 24px;
+    background: white;
+    color: #2c2b26;
+    font-size: 1rem;
+    line-height: 1.4;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.bot-message .bubble {
+    background: #f1e7cf;
+    border-bottom-left-radius: 6px;
+}
+
+.user-message .bubble {
+    background: #d9e0b5;
+    border-bottom-right-radius: 6px;
+}
+
+.chat-input-area {
+    display: flex;
+    padding: 16px 20px;
+    background: #f7e9cf;
+    gap: 12px;
+    border-top: 1px solid #e6cf9e;
+}
+
+#userInput {
+    flex: 1;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 60px;
+    font-family: inherit;
+    font-size: 1rem;
+    background: white;
+    outline: none;
+    transition: 0.2s;
+    box-shadow: inset 0 1px 3px #0001, 0 1px 0 white;
+}
+
+#userInput:focus {
+    box-shadow: 0 0 0 2px #e4b363;
+}
+
+#sendBtn {
+    background: #8b5a2b;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 0 24px;
+    border-radius: 60px;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#sendBtn:hover:not(:disabled) {
+    background: #6e451c;
+    transform: scale(0.97);
+}
+
+#sendBtn:disabled, #userInput:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: #e6cf9e;
+    border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: #8b5a2b;
+    border-radius: 10px;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blancanieves · El bosque encantado</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="forest-bg"></div>
+    <div class="chat-container">
+        <div class="chat-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/1995/1995572.png" alt="apple" class="apple-icon">
+            <h1>Blancanieves</h1>
+            <p>la princesa del bosque</p>
+            <div class="api-status" id="apiStatus">🌲 Cargando configuración...</div>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <div class="avatar">🍎</div>
+                <div class="bubble">¡Hola! Soy Blancanieves. Cargando el bosque encantado...</div>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="userInput" placeholder="Escribe tu mensaje..." autocomplete="off" disabled>
+            <button id="sendBtn" disabled>Enviar</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
